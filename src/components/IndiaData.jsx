@@ -11,7 +11,8 @@ function IndiaData() {
     await axios.get('https://api.rootnet.in/covid19-in/stats/latest')
     .then(({data}) => {
         setState(data.data.summary)
-            console.log(data.data)})
+            //console.log(data.data.regional)
+        })
     .catch((error)=> console.log(error))}
 
     useEffect(() => {
@@ -23,8 +24,8 @@ function IndiaData() {
             <div className='indiaData'>
            <img className='indiaIcon' alt='india' src={india}></img>
            <div className='tIndiaCases'>
-           <div className='cardIndia'><div className='datatxt'><b>Total Cases:</b>{state.total}</div></div>
-          <div className='cardIndia'><div className='datatxt'><b>Recovered:</b>{state.discharged}</div></div>
+           <div className='cardIndia'><div className='datatxt'><b>Total Cases:</b><span className='totalIndia'>{state.total}</span></div></div>
+          <div className='cardIndia'><div className='datatxt'><b>Recovered:</b><span className='recoveredIndia'>{state.discharged}</span></div></div>
            </div>
            <div className='cardIndia'><div className='deathtxt'><b>Deaths:</b><span className='deathIndia'>{state.deaths}</span></div></div>
            </div>

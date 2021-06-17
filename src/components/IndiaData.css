@@ -45,6 +45,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .cardIndia {
@@ -68,5 +69,15 @@
 
 .deathIndia {
   color: red;
+  margin-left: 5px;
+}
+
+.recoveredIndia {
+  color: green;
+  margin-left: 5px;
+}
+
+.totalIndia {
+  color: black;
   margin-left: 5px;
 }
