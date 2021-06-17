@@ -1,0 +1,61 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: lightgreen;
+
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.worldData {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.wdtxt {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.totals {
+  display: flex;
+}
+.totals2 {
+  display: flex;
+}
+.totals3 {
+  display: flex;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: fit-content;
+  height: fit-content;
+  margin: 10px;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.cardContainer {
+  padding: 10px;
+  font-size: small;
+}
+
+.death {
+  color: red;
+}
