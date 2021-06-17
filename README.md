@@ -1,6 +1,6 @@
 # Covid Realtime Data web App using React & Chart.js
 
-This Project is based on building a web-app based on covid real-time data using various api's and packages.
+This Project is building a web-app based on covid real-time data using various api's and packages.
 
 ## Available Scripts
 
