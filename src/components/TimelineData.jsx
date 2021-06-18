@@ -4,10 +4,15 @@ import { useEffect, useState } from 'react'
 import './Timeline.css'
 import { Line } from 'react-chartjs-2'
 import colors from './colors'
+import Skeleton, {SkeletonTheme} from 'react-loading-skeleton'
+
 
 function TimelineData() {
 
+    //still working on it
+
     const [TimeLinechart, setTimeLinechart] = useState([])
+    const [loading, setLoading] = useState(true)
 
     let dates=[]
     let casesperday=[]
@@ -57,21 +62,33 @@ function TimelineData() {
 
     useEffect(()=>{
         fetchData()
+        setTimeout(() => setLoading(false), 8000)
     },[])
 
     return (
-        <div className='TimelineApp'>
-            <div className='chart'>
+
+        
+    <div className='TimelineApp'>
+
+            {loading===false ? (
+            <div className='chartTimeline'>
      <Line
 	data={TimeLinechart}
-    width={1000}
-	height={500}
+ 
 	options={{
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
       }}
 	/>
-    </div>
+    </div>):(<div >
+                    <SkeletonTheme color="lightgray" highlightColor="#999">
+                    <div >
+                        <Skeleton className='skeletonTimeline' width={500} height={50} delay={0.1} count={5} />
+                    </div>
+                    </SkeletonTheme>
+            </div>)
+
+            }
            
         </div>
     )

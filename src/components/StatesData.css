@@ -3,6 +3,7 @@
   justify-content: center;
 }
 
-.chart {
-  width: 1200px;
+.chartStates {
+  height: auto;
+  width: auto;
 }

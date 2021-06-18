@@ -3,11 +3,13 @@ import axios from 'axios'
 import { Bar, Line, Bubble, Chart, Pie, Radar, Scatter, PolarArea } from 'react-chartjs-2'
 import './StatesData.css'
 import colors from './colors'
-import {  BubbleChart  } from '@weknow/react-bubble-chart-d3'
+import Skeleton, {SkeletonTheme} from 'react-loading-skeleton'
+
 function StatesData() {
 
     const [chart, setChart] = useState([])
     
+    const [loading, setLoading] = useState(true)
 
 
     const chartData=()=>{
@@ -71,22 +73,28 @@ function StatesData() {
 
     useEffect(()=>{
         chartData()
+        setTimeout(() => setLoading(false), 8000)
     },[])
 
     return (
     <div className='StatesApp'>
-        <div className='chart'>
+
+     {loading===false ?(
+        <div className='chartStates'>
      <Bar
 	data={chart}
-    width={50}
-	height={20}
 	options={{
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
       }}
 	/>
-    </div>
-
+    </div>):( <div> 
+                    <SkeletonTheme color="lightgray" highlightColor="#999">
+                    <div >
+                        <Skeleton className='skeletonTimeline' width={500} height={50} delay={0.1} count={2} />
+                    </div>
+                    </SkeletonTheme></div>)
+                }
         </div>
 
     )

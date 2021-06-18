@@ -6,6 +6,7 @@ import StatesData from './components/StatesData';
 import TimelineData from './components/TimelineData';
 function App() {
 
+  
 
   return (
     <div className="App">
