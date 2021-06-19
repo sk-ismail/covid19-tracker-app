@@ -62,7 +62,8 @@ function TimelineData() {
 
     useEffect(()=>{
         fetchData()
-        setTimeout(() => setLoading(false), 8000)
+        //setLoading(false)
+        setTimeout(() =>setLoading(false) , 3000)
     },[])
 
     return (
@@ -75,6 +76,8 @@ function TimelineData() {
      <Line
 	data={TimeLinechart}
  
+    width={1000}
+    height={500}
 	options={{
         responsive: true,
         maintainAspectRatio: false,

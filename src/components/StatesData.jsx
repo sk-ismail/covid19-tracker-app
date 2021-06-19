@@ -73,7 +73,8 @@ function StatesData() {
 
     useEffect(()=>{
         chartData()
-        setTimeout(() => setLoading(false), 8000)
+        //setLoading(false)
+        setTimeout(() => setLoading(false), 1000)
     },[])
 
     return (
@@ -83,6 +84,8 @@ function StatesData() {
         <div className='chartStates'>
      <Bar
 	data={chart}
+    width={1000}
+    height={500}
 	options={{
         responsive: true,
         maintainAspectRatio: false,
