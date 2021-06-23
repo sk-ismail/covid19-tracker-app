@@ -1,16 +1,24 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import axios from 'axios'
-import { Bar, Line, Bubble, Chart, Pie, Radar, Scatter, PolarArea } from 'react-chartjs-2'
+import { Bar } from 'react-chartjs-2'
 import './StatesData.css'
 import colors from './colors'
 import Skeleton, {SkeletonTheme} from 'react-loading-skeleton'
 
 function StatesData() {
-
+    
+// Line, Bubble, Chart, Pie, Radar, Scatter, PolarArea
     const [chart, setChart] = useState([])
     
     const [loading, setLoading] = useState(true)
 
+    const [Dimensions, setDimensions] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight
+
+    })
+
+    
 
     const chartData=()=>{
 
@@ -21,7 +29,7 @@ function StatesData() {
            axios.get('https://api.rootnet.in/covid19-in/stats/latest')
             .then(({data}) => {
                 
-                for(let i=0; i<(data.data.regional).length; i++){
+                for(let i=1; i<(data.data.regional).length; i++){
 
                     let location = data.data.regional[i].loc
                     let confirmedCaseIndian = data.data.regional[i].confirmedCasesIndian
@@ -72,16 +80,27 @@ function StatesData() {
    
 
     useEffect(()=>{
+        window.addEventListener('resize', ()=>{
+
+                setDimensions({
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                })
+                
+                
+            })
         chartData()
         //setLoading(false)
         setTimeout(() => setLoading(false), 1000)
     },[])
 
+    //console.log(Dimensions)
+
     return (
     <div className='StatesApp'>
 
      {loading===false ?(
-        <div className='chartStates'>
+        <div className='chartStates' style={{width: (Dimensions.width)/1.5, height: (Dimensions.height)/1.5}} >
      <Bar
 	data={chart}
     width={1000}

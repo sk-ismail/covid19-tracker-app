@@ -29,7 +29,7 @@ function IndiaData() {
            </div>
            <div className='cardIndia'><div className='deathtxt'><b>Deaths:</b><span className='deathIndia'>{state.deaths}</span></div></div>
            </div>
-           <div className='fadein' />
+           
         </div>
     )
 }

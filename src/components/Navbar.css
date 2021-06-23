@@ -1,0 +1,37 @@
+* {
+  text-align: center;
+}
+
+.NavbarApp {
+  padding: 10px;
+  background-color: black;
+
+  text-decoration: none;
+}
+.pagesLinks {
+  text-decoration: none;
+  margin: 5px;
+}
+
+.btns {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+button :hover {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.active-class button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}

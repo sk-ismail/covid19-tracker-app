@@ -6,6 +6,7 @@ import { Line } from 'react-chartjs-2'
 import colors from './colors'
 import Skeleton, {SkeletonTheme} from 'react-loading-skeleton'
 
+const url='https://api.rootnet.in/covid19-in/stats/history'
 
 function TimelineData() {
 
@@ -13,10 +14,14 @@ function TimelineData() {
 
     const [TimeLinechart, setTimeLinechart] = useState([])
     const [loading, setLoading] = useState(true)
+    const [Dimensions, setDimensions] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight
+    })
 
     let dates=[]
     let casesperday=[]
-  const fetchData=()=>{ axios.get('https://api.rootnet.in/covid19-in/stats/history')
+  const fetchData=()=>{ axios.get(url)
     .then((res)=>{ 
         
         for(let i=0; i<=(res.data.data).length; i++){
@@ -61,6 +66,13 @@ function TimelineData() {
     .catch((err)=>{ console.log(err)})}
 
     useEffect(()=>{
+        window.addEventListener('resize', ()=>{
+            setDimensions({
+                width: window.innerWidth,
+                heigh: window.innerHeight
+            })
+        })
+        
         fetchData()
         //setLoading(false)
         setTimeout(() =>setLoading(false) , 3000)
@@ -72,7 +84,7 @@ function TimelineData() {
     <div className='TimelineApp'>
 
             {loading===false ? (
-            <div className='chartTimeline'>
+            <div className='chartTimeline' style={{width: (Dimensions.width)/1.5, height: (Dimensions.height)/1.5}}>
      <Line
 	data={TimeLinechart}
  

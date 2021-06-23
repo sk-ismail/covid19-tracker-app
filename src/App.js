@@ -1,22 +1,19 @@
 import React from 'react';
 import './App.css';
-import MainData from './components/MainData.jsx';
-import IndiaData from './components/IndiaData'
-import StatesData from './components/StatesData';
-import TimelineData from './components/TimelineData';
+//import Home from './components/Home/Home';
+import Navbar from './components/Navbar';
+
 function App() {
 
   
 
   return (
     <div className="App">
-     <MainData/>
-     <IndiaData/>
-     <StatesData/>
-     <TimelineData/>
-     
+     <Navbar/>
     </div>
   );
 }
+
+
 
 export default App;
