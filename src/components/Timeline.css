@@ -1,7 +1,9 @@
 .TimelineApp {
   display: flex;
   justify-content: center;
-  margin: 40px;
+
+  padding: 40px;
+  background-color: black;
 }
 .skeletonTimeline {
   display: flex;
@@ -14,7 +16,7 @@
   width: fit-content;
 
   padding: 30px;
-
+  background-color: whitesmoke;
   border-radius: 30px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;

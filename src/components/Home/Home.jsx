@@ -5,6 +5,7 @@ import MainData from '../MainData'
 import IndiaData from '../IndiaData'
 import StatesData from '../StatesData'
 import TimelineData from '../TimelineData'
+import DistrictData from '../DistrictData'
 
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
      <IndiaData/>
      <StatesData/>
      <TimelineData/>
+     <DistrictData/>
         </div>
     )
 }

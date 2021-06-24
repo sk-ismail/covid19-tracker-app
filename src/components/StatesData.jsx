@@ -1,6 +1,6 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import { Bar } from 'react-chartjs-2'
+import { Bar, Pie } from 'react-chartjs-2'
 import './StatesData.css'
 import colors from './colors'
 import Skeleton, {SkeletonTheme} from 'react-loading-skeleton'
@@ -17,6 +17,8 @@ function StatesData() {
         height: window.innerHeight
 
     })
+
+    const [pieBar, setpieBar] = useState(true)
 
     
 
@@ -96,24 +98,58 @@ function StatesData() {
 
     //console.log(Dimensions)
 
+    const styles={
+        chartsfx:{
+            width: (Dimensions.width)/2,
+            height: (Dimensions.height)/2.5
+            
+        }
+        
+    }
+
+    const pieHandle=()=>{
+        setpieBar(prevCheck=> !prevCheck)
+    }
+    const barHandle=()=>{
+        setpieBar(false)
+    }
+
+
+
     return (
     <div className='StatesApp'>
 
+
      {loading===false ?(
-        <div className='chartStates' style={{width: (Dimensions.width)/1.5, height: (Dimensions.height)/1.5}} >
-     <Bar
-	data={chart}
-    width={1000}
-    height={500}
-	options={{
-        responsive: true,
-        maintainAspectRatio: false,
-      }}
-	/>
+        <div className='chartStates' style={styles.chartsfx} >
+            <div >
+            <button className='chartbtns'onClick={()=>pieHandle()}>Bar</button>
+            <button className='chartbtns'onClick={()=>barHandle()}>Pie</button>
+           
+        </div>
+    { !pieBar? (
+        <Pie
+        data={chart}
+        width={1000}
+        height={500}
+        options={{
+            responsive: true,
+            maintainAspectRatio: false,
+          }}
+        />
+    ): (   <Bar
+        data={chart}
+        width={1000}
+        height={500}
+        options={{
+            responsive: true,
+            maintainAspectRatio: false,
+          }}
+        />) } 
     </div>):( <div> 
                     <SkeletonTheme color="lightgray" highlightColor="#999">
                     <div >
-                        <Skeleton className='skeletonTimeline' width={500} height={50} delay={0.1} count={2} />
+                        <Skeleton className='skeletonTimeline' width={500} height={50} delay={0.1} count={5} />
                     </div>
                     </SkeletonTheme></div>)
                 }

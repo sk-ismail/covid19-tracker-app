@@ -29,7 +29,7 @@ function TimelineData() {
             let date=res.data.data[i].day;
             let caseperday=res.data.data[i].summary.total;
             //console.log(res.data.data[i].day)
-            //console.log(res.data.data[i].summary.total)
+            //console.log(res.data.data)
             casesperday.push(caseperday)
             dates.push(date)
 
