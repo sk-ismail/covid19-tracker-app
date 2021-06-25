@@ -101,7 +101,7 @@ function StatesData() {
     const styles={
         chartsfx:{
             width: (Dimensions.width)/1.5,
-            height: (Dimensions.height)/1.5
+            height: (Dimensions.height)/1.9
             
         }
         
