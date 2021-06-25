@@ -4,7 +4,7 @@ import './CovidTests.css'
 const CovidTests = () => {
     return (
         <div>
-            CovidTests
+             Under Development...
         </div>
     )
 }
