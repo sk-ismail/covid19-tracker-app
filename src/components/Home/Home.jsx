@@ -6,7 +6,7 @@ import IndiaData from '../IndiaData'
 import StatesData from '../StatesData'
 import TimelineData from '../TimelineData'
 import DistrictData from '../DistrictData'
-
+import StatesDataTable from '../StatesDataTable'
 
 const Home = () => {
     return (
@@ -16,7 +16,8 @@ const Home = () => {
      <IndiaData/>
      <StatesData/>
      <TimelineData/>
-     <DistrictData/>
+     <StatesDataTable/>
+     
         </div>
     )
 }

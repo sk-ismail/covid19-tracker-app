@@ -22,13 +22,13 @@ function StatesData() {
 
     
 
-    const chartData=()=>{
+    const chartData= async ()=>{
 
        let locations=[]
        let confirmedCasesIndian=[]
        
     
-           axios.get('https://api.rootnet.in/covid19-in/stats/latest')
+          await axios.get('https://api.rootnet.in/covid19-in/stats/latest')
             .then(({data}) => {
                 
                 for(let i=1; i<(data.data.regional).length; i++){
@@ -100,8 +100,8 @@ function StatesData() {
 
     const styles={
         chartsfx:{
-            width: (Dimensions.width)/2,
-            height: (Dimensions.height)/2.5
+            width: (Dimensions.width)/1.5,
+            height: (Dimensions.height)/1.5
             
         }
         

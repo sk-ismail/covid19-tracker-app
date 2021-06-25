@@ -12,12 +12,8 @@ const DistrictData = () => {
     await axios.get('https://api.covid19india.org/state_district_wise.json')
     .then((res) => {
         setState(res)
-
-        for(let i=0; i<stateNamesData; i++){
-            console.log(res.data[`${stateNamesData[i]}`])
-
-        }
         
+        console.log(res.data)
             
         })
     .catch((error)=> console.log(error))}

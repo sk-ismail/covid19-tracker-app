@@ -10,6 +10,9 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="undefined" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -25,10 +28,76 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Covid-Tracker-App</title>
+    <style>
+      #return-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgb(0, 0, 0);
+  background: rgba(255, 255, 255, 0.9);
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-decoration: none;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+  display: none;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 99;
+}
+#return-to-top i {
+  color: rgb(0, 0, 0);
+  margin: 0;
+  position: relative;
+ 
+  top: 13px;
+  font-size: 19px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 99;
+}
+#return-to-top:hover {
+  background: rgb(255, 255, 255);
+  z-index: 99;
+}
+#return-to-top:hover i {
+  color: rgb(0, 0, 0);
+  top: 5px;
+  z-index: 99;
+}
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <a href="javascript:" id="return-to-top"><i class="fas fa-chevron-up"></i></a>
+
+    <script>
+      function scrollWin() {
+window.scrollTo(0, 500);
+}
+
+$(window).scroll(function() {
+if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+  $('#return-to-top').fadeIn(200);    // Fade in the arrow
+} else {
+  $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+}
+});
+$('#return-to-top').click(function() {      // When arrow is clicked
+$('body,html').animate({
+  scrollTop : 0                       // Scroll to top of body
+}, 500);
+});
+  </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
