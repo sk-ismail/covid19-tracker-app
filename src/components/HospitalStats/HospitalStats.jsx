@@ -4,7 +4,7 @@ import './HospitalStats.css'
 const HospitalStats = () => {
     return (
         <div>
-            HospitalStats
+            Under Development...
         </div>
     )
 }
