@@ -2,6 +2,8 @@
 
 This Project is building a web-app based on covid real-time data using various api's and packages.
 
+## https://covid19-data-007.netlify.app/
+
 ## Available Scripts
 
 In the project directory, you can run:
