@@ -4,7 +4,7 @@ This Project is building a web-app based on covid real-time data using various a
 
 ## https://covid19-data-007.netlify.app/
 
-# ![Screenshot from 2021-06-26 17-43-25](https://user-images.githubusercontent.com/42185028/123512617-0f078b80-d6a6-11eb-904e-aa063841589a.png)
+![Screenshot from 2021-06-26 17-43-25](https://user-images.githubusercontent.com/42185028/123512617-0f078b80-d6a6-11eb-904e-aa063841589a.png)
 
 ## Available Scripts
 
