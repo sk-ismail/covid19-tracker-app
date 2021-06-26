@@ -1,7 +1,7 @@
 import React,{ useState, useEffect} from 'react'
 import './District.css'
 import axios from 'axios'
-import { data } from 'browserslist'
+
 import stateNamesData from './stateNamesData'
 const DistrictData = () => {
 
@@ -9,15 +9,21 @@ const DistrictData = () => {
    
    const fetchData= async ()=>{ 
     
+    const distData=[]
+
     await axios.get('https://api.covid19india.org/state_district_wise.json')
     .then((res) => {
         setState(res)
         
-        console.log(res.data)
+        const distsData=res.data
+        distData.push(distsData) 
+        
+        console.log(distData)
             
         })
     .catch((error)=> console.log(error))}
 
+   
     useEffect(() => {
         fetchData()
       }, [])

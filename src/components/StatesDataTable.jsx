@@ -2,18 +2,22 @@ import React,{ useEffect, useState} from 'react'
 import './StatesDataTable.css'
 import axios from 'axios'
 import india from '../images/india.png'
+import stateLogo from './stateLogo'
+
 const StatesDataTable = () => {
 
     const [Table, setTable] = useState([])
+    //const [image, setimage] = useState([])
 
     const tableData=async ()=>{
         
         const apisData=[]
+        //const imagesData=[]
      
            await axios.get('https://api.rootnet.in/covid19-in/stats/latest')
              .then(({data}) => {
                  
-                 for(let i=1; i<(data.data.regional).length; i++){
+                 for(let i=1; i<((data.data.regional).length); i++){
  
                      //setTable(data.data.regional[i])
                      
@@ -21,13 +25,22 @@ const StatesDataTable = () => {
                      let apiData=data.data.regional[i]
                      apisData.push(apiData)
 
+                    
+
                      
 
 
                     }
 
+                    for(let j=0; j<stateLogo.length; j++){
+                       // let imgData=stateLogo[j]
+                       // apisData.push(imgData)
+                    }
+
                     setTable(apisData)
-                    console.log(apisData)
+                    
+                    //console.log(apisData)
+                    //console.log(imagesData)
 
                     
  
@@ -56,9 +69,9 @@ const StatesDataTable = () => {
       </tr>
 
 {Table.map((item)=>{
-    return(<tr >
+    return(<tr>
 
-        <td className='imageandname'><div><img src={india} alt="pic"></img></div><div>{item.loc}</div></td>
+       <td className='imageandname'><div><img src={india} alt='pic'/></div><div>{item.loc}</div></td>
         <td>{item.totalConfirmed}</td>
         <td>{item.deaths}</td>
         <td>{item.discharged}</td>
