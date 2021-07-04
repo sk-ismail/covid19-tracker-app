@@ -20,66 +20,6 @@ function StatesData() {
 
     const [pieBar, setpieBar] = useState(true)
 
-    
-
-    const chartData= async ()=>{
-
-       let locations=[]
-       let confirmedCasesIndian=[]
-       
-    
-          await axios.get('https://api.rootnet.in/covid19-in/stats/latest')
-            .then(({data}) => {
-                
-                for(let i=1; i<(data.data.regional).length; i++){
-
-                    let location = data.data.regional[i].loc
-                    let confirmedCaseIndian = data.data.regional[i].confirmedCasesIndian
-                    locations.push(location)
-                    confirmedCasesIndian.push(confirmedCaseIndian)}
-
-                   
-
-                    
-                    setChart({
-                        labels : locations,
-                        datasets : [
-                            {
-                                label: 'Confirmed Cases',
-                                data: confirmedCasesIndian,
-                                borderWidth:2,
-                                backgroundColor: colors,
-                                borderColor: "rgba(0,0,0,0.9)",
-                                borderCapStyle: "butt",
-                                borderDash: [],
-                                borderDashOffset: 0.0,
-                                borderJoinStyle: "miter",
-                                pointBorderColor: "rgba(75,192,192,1)",
-                                pointBackgroundColor: "#fff",
-                                pointBorderWidth: 1,
-                                pointHoverRadius: 5,
-                                pointHoverBackgroundColor: "rgba(75,192,192,1)",
-                                pointHoverBorderColor: "rgba(220,220,220,1)",
-                                pointHoverBorderWidth: 2,
-                                pointRadius: 1,
-                                pointHitRadius: 10
-                                
-                            }
-                        ]
-                        
-                    })
-                    
-                
-                
-            })
-            .catch((error)=> console.log(error))
-
-           
-
-        
-
-    }
-   
 
     useEffect(()=>{
         window.addEventListener('resize', ()=>{
@@ -91,7 +31,63 @@ function StatesData() {
                 
                 
             })
-        chartData()
+            const chartData= async ()=>{
+
+                let locations=[]
+                let confirmedCasesIndian=[]
+                
+             
+                   await axios.get('https://api.rootnet.in/covid19-in/stats/latest')
+                     .then(({data}) => {
+                         
+                         for(let i=1; i<(data.data.regional).length; i++){
+         
+                             let location = data.data.regional[i].loc
+                             let confirmedCaseIndian = data.data.regional[i].confirmedCasesIndian
+                             locations.push(location)
+                             confirmedCasesIndian.push(confirmedCaseIndian)}
+         
+                            
+         
+                             
+                             setChart({
+                                 labels : locations,
+                                 datasets : [
+                                     {
+                                         label: 'Confirmed Cases',
+                                         data: confirmedCasesIndian,
+                                         borderWidth:2,
+                                         backgroundColor: colors,
+                                         borderColor: "rgba(0,0,0,0.9)",
+                                         borderCapStyle: "butt",
+                                         borderDash: [],
+                                         borderDashOffset: 0.0,
+                                         borderJoinStyle: "miter",
+                                         pointBorderColor: "rgba(75,192,192,1)",
+                                         pointBackgroundColor: "#fff",
+                                         pointBorderWidth: 1,
+                                         pointHoverRadius: 5,
+                                         pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                                         pointHoverBorderColor: "rgba(220,220,220,1)",
+                                         pointHoverBorderWidth: 2,
+                                         pointRadius: 1,
+                                         pointHitRadius: 10
+                                         
+                                     }
+                                 ]
+                                 
+                             })
+                             
+                         
+                         
+                     })
+                     .catch((error)=> console.log(error))
+         
+                    
+         
+                 
+         
+             }
         //setLoading(false)
         setTimeout(() => setLoading(false), 1000)
     },[])

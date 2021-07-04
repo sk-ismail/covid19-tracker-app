@@ -1,0 +1,82 @@
+.TotalHospitalApp {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cardsContainer {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ruralCard {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  transition-duration: 500ms;
+}
+
+.totalCard {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.3rem;
+  transition-duration: 500ms;
+}
+.urbanCard123 {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  transition-duration: 500ms;
+}
+
+.urbanCard123 :hover {
+  transform: scale(1.1);
+}
+
+.totalCard:hover {
+  transform: scale(1.1);
+  background-color: black;
+  color: white;
+}
+
+.ruralCard:hover {
+  transform: scale(1.1);
+  background-color: black;
+  color: white;
+}
+
+.borderCards {
+  border: 0.01px rgb(255, 255, 255);
+  border-style: solid;
+
+  padding: 5px;
+  border-radius: 10px;
+  margin: 10px;
+}

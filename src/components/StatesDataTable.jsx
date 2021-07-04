@@ -68,8 +68,8 @@ const StatesDataTable = () => {
          <th width="">Foreign Cases</th>
       </tr>
 
-{Table.map((item)=>{
-    return(<tr>
+{Table.map((item,key)=>{
+    return(<tr key={key}>
 
        <td className='imageandname'><div><img src={india} alt='pic'/></div><div>{item.loc}</div></td>
         <td>{item.totalConfirmed}</td>
