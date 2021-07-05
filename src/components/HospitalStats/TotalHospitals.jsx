@@ -17,7 +17,7 @@ const TotalHospitals = () => {
             
             //distData.push(distsData) 
             setTotalBeds(res.data.data.summary)
-            console.log(res.data.data.summary)
+            //console.log(res.data.data.regional)
                 
             })
         .catch((error)=> console.log(error))}

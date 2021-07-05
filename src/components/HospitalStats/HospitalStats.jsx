@@ -1,7 +1,8 @@
-import React,{useState, useEffect} from 'react'
+import React from 'react'
 import './HospitalStats.css'
-import axios from 'axios'
+//import axios from 'axios'
 import TotalHospitals from './TotalHospitals'
+import StateHospital from './StateHospital'
 const HospitalStats = () => {
 
 
@@ -9,6 +10,7 @@ const HospitalStats = () => {
     return (
         <div>
             <TotalHospitals/>
+            <StateHospital/>
             
         </div>
     )
