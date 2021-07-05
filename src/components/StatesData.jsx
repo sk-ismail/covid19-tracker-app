@@ -89,6 +89,7 @@ function StatesData() {
          
              }
         //setLoading(false)
+        chartData()
         setTimeout(() => setLoading(false), 1000)
     },[])
 
