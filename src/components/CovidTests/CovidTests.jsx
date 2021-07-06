@@ -68,11 +68,35 @@ const CovidTests = () => {
     onClose={() => setCurrentplace(null)}
     className="popupCard1"
     anchor="top" >
-    <div className='popupCard'>
-        <div>
-            {p.country}
-        </div>
-      </div>
+          <div className='popupCard'>
+
+<div className='usernameCard1'>
+
+<div className='flag'><img src={`${p.countryInfo.flag}`} alt='pic' /></div>
+</div>
+<div className='usernameCard'>
+<label className='labelCard'>Country:</label>
+<div className='content'>{p.country}</div>
+</div>
+<div className='usernameCard'>
+<label className='labelCard'>Cases:</label>
+<div className='content'>{p.cases}</div>
+</div>
+<div className='usernameCard'>
+<label className='labelCard'>Active:</label>
+<div className='content'>{p.active}</div>
+</div>
+<div className='usernameCard'>
+<label className='labelCard'>Deaths:</label>
+<div className='content'>{p.deaths}</div>
+</div>
+<div className='usernameCard'>
+<label className='labelCard'>Recovered:</label>
+<div className='content'>{p.recovered}</div>
+</div>
+
+
+</div>
     
   </Popup>)}
 </>
