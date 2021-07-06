@@ -4,6 +4,11 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import ReactMapGL,{ Marker, Popup} from 'react-map-gl';
 import {Room } from '@material-ui/icons'
+import 'mapbox-gl/dist/mapbox-gl.css';
+//import mapboxgl from 'mapbox-gl';
+// eslint-disable-next-line import/no-webpack-loader-syntax
+//mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
+
 const CovidTests = () => {
     const [currentplace, setCurrentplace] = useState([]);
     const [viewport, setViewport] = useState({
@@ -19,10 +24,8 @@ const CovidTests = () => {
                      await axios.get('https://disease.sh/v3/covid-19/countries')
                      .then((res)=>{
                          setpin(res.data)
-                           console.log(res.data)
-                           for(let i=0; i<(res.data).length; i++){
-                               console.log(res.data[i].countryInfo._id)
-                           }
+                           //console.log(res.data)
+
 
                      })
                      .catch((err)=>{console.log(err)})
@@ -54,7 +57,7 @@ const CovidTests = () => {
       key={p.countryInfo._id}
           >
   
-  <Room onClick={()=>handleRoomClick(p.updated, p.countryInfo.lat, p.countryInfo.long)} style={{ fontSize: viewport.zoom*7 , color: p._id === currentplace? "red" : "white" , cursor: "pointer"}}/>
+  <Room  onClick={()=>handleRoomClick(p.updated, p.countryInfo.lat, p.countryInfo.long)} style={{ fontSize: viewport.zoom*7 , color: p.updated === currentplace? "red" : "white" , cursor: "pointer"}}/>
 
 </Marker>
 { p.updated === currentplace && (<Popup

@@ -49,7 +49,7 @@ function StatesData() {
                              deaths.push(data.data.regional[i].deaths)
                              confirmedCasesIndian.push(confirmedCaseIndian)}
                                   
-                             console.log(data)
+                             //console.log(data)
                             
          
                              

@@ -12,12 +12,12 @@
     "axios": "^0.21.1",
     "bizcharts": "^4.1.10",
     "cors": "^2.8.5",
-    "netlify-cli": "^3.38.10",
+    "netlify-cli": "^3.39.4",
     "react": "^17.0.2",
     "react-chartjs-2": "^3.0.3",
     "react-dom": "^17.0.2",
     "react-loading-skeleton": "^2.2.0",
-    "react-map-gl": "^6.1.16",
+    "react-map-gl": "^5.2.5",
     "react-minimal-pie-chart": "^8.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
@@ -40,7 +40,9 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "not chrome < 51",
+      "not safari < 10"
     ],
     "development": [
       "last 1 chrome version",

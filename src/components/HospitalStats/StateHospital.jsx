@@ -22,7 +22,7 @@ const StateHospital = () => {
                 stateNames.push(res.data.data.regional[i].state)
                 Beds.push(res.data.data.regional[i].totalBeds)
                 hospitals.push(res.data.data.regional[i].totalHospitals)
-                console.log(res.data.data.regional[i])
+                //console.log(res.data.data.regional[i])
             }
             
             //console.log(Beds)
