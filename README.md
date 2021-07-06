@@ -1,8 +1,8 @@
 # Covid Realtime Data web App using React & Chart.js
 
-## This Project is building a web-app based on covid real-time data using various api's and packages.
+### This Project is building a web-app based on covid real-time data using various api's and packages.
 
-## This project is built using React, Chartjs and Mapbox-gl.
+### This project is built using React, Chartjs and Mapbox-gl.
 
 ## https://covid19-data-007.netlify.app/
 
