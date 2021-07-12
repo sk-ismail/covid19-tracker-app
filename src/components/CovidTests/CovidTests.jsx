@@ -36,7 +36,7 @@ const CovidTests = () => {
 
     const handleRoomClick=(id, lat, long)=>{
         setCurrentplace(id)
-        setViewport({...viewport, latitude: lat, longitude: long})
+        setViewport({...viewport, latitude: lat/2, longitude: long/2})
       }
     return (
         <div>
