@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import './StateHospital.css'
 import axios from 'axios'
-import { Bar, Pie, Line, Radar } from 'react-chartjs-2'
+import { Bar } from 'react-chartjs-2'
 import colors from '../colors'
 const StateHospital = () => {
 
@@ -83,7 +83,7 @@ const StateHospital = () => {
        
         useEffect(() => {
             fetchData()
-          }, [])
+          })
     return (
         <div>
          <Bar

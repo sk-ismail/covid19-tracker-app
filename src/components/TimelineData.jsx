@@ -2,7 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useEffect, useState } from 'react'
 import './Timeline.css'
-import { Line, Bar, Pie, Bubble, Chart, Radar, Scatter, PolarArea } from 'react-chartjs-2'
+import { Line } from 'react-chartjs-2'
 import colors from './colors'
 import Skeleton, {SkeletonTheme} from 'react-loading-skeleton'
 
@@ -123,7 +123,7 @@ function TimelineData() {
         fetchData()
         //setLoading(false)
         setTimeout(() =>setLoading(false) , 3000)
-    },[])
+    })
 
     return (
 

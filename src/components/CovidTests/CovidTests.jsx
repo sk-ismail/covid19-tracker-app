@@ -82,6 +82,10 @@ const CovidTests = () => {
 <div className='content'>{p.cases}</div>
 </div>
 <div className='usernameCard'>
+<label className='labelCard'>TodayCases:</label>
+<div className='content'>{p.todayCases}</div>
+</div>
+<div className='usernameCard'>
 <label className='labelCard'>Active:</label>
 <div className='content'>{p.active}</div>
 </div>
@@ -90,8 +94,16 @@ const CovidTests = () => {
 <div className='content'>{p.deaths}</div>
 </div>
 <div className='usernameCard'>
+<label className='labelCard'>TodayDeaths:</label>
+<div className='content'>{p.todayDeaths}</div>
+</div>
+<div className='usernameCard'>
 <label className='labelCard'>Recovered:</label>
 <div className='content'>{p.recovered}</div>
+</div>
+<div className='usernameCard'>
+<label className='labelCard'>TodayRecovered:</label>
+<div className='content'>{p.todayRecovered}</div>
 </div>
 
 
