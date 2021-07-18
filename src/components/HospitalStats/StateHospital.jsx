@@ -83,7 +83,7 @@ const StateHospital = () => {
        
         useEffect(() => {
             fetchData()
-          })
+          }, [])
     return (
         <div>
          <Bar

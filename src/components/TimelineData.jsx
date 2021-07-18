@@ -123,7 +123,7 @@ function TimelineData() {
         fetchData()
         //setLoading(false)
         setTimeout(() =>setLoading(false) , 3000)
-    })
+    },[])
 
     return (
 
