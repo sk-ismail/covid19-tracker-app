@@ -48,22 +48,12 @@ const CovidTests = () => {
     >
 {pin.map((p, key)=>(
        <>
-      <Marker
-      latitude={p.countryInfo.lat}
-      longitude={p.countryInfo.long}
-      offsetLeft={-viewport.zoom*3.5}
-      offsetTop={-viewport.zoom*7}
-      key={p.countryInfo._id}
-          >
-  
-  <Room  onClick={()=>handleRoomClick(p.updated, p.countryInfo.lat, p.countryInfo.long)} style={{ fontSize: viewport.zoom*7 , color: p.updated === currentplace? "red" : "white" , cursor: "pointer"}}/>
-
-</Marker>
-{ p.updated === currentplace && (<Popup
+       { p.updated === currentplace && (<Popup
     latitude={p.countryInfo.lat}
     longitude={p.countryInfo.long}
     closeButton={true}
     closeOnClick={false}
+    
     onClose={() => setCurrentplace(null)}
     className="popupCard1"
     anchor="top" >
@@ -110,6 +100,19 @@ const CovidTests = () => {
 </div>
     
   </Popup>)}
+      <Marker
+      latitude={p.countryInfo.lat}
+      longitude={p.countryInfo.long}
+      offsetLeft={-viewport.zoom*3.5}
+      offsetTop={-viewport.zoom*7}
+      zIndex={-100}
+      key={p.countryInfo._id}
+          >
+  
+  <Room  onClick={()=>handleRoomClick(p.updated, p.countryInfo.lat, p.countryInfo.long)} style={{ fontSize: viewport.zoom*7 , color: p.updated === currentplace? "red" : "white",   cursor: "pointer"}}/>
+
+</Marker>
+
 </>
 ))}
 

@@ -24,3 +24,10 @@ label {
   color: white;
   margin: 3px;
 }
+
+.mapboxgl-popup-content {
+  z-index: 1000;
+  background: none;
+}
+.mapboxgl-marker {
+}
