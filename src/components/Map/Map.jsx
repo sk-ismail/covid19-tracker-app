@@ -1,5 +1,5 @@
 import axios from 'axios'
-import './CovidTests.css'
+import './MapData.css'
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import ReactMapGL,{ Marker, Popup} from 'react-map-gl';
