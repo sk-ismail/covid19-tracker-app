@@ -11,7 +11,7 @@ function IndiaData() {
     await axios.get('https://disease.sh/v3/covid-19/countries/india?strict=true')
     .then((res) => {
         setState(res.data)
-            console.log(res)
+            //console.log(res)
         })
     .catch((error)=> console.log(error))}
 
